@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos com javascript</title>
+    <style>
+        body{
+            height: 20rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <form action="" name="cadastro">
+        <label>Nome: <input type="text" id="nome"></label><br>
+        <label>Cidade:
+            <select id="cidade">
+                <option value="natal">Natal</option>
+                <option value="recife">Recife</option>
+                <option value="jp">João Pessoa</option>
+            </select>
+        </label> <br>
+        <input type="submit" value="ENVIAR">
+    </form>
+    <script>
+
+        document.body.addEventListener("click",function(e){
+            console.log("Evento de click no body.")
+        })
+        //o body vai até onde tem texto, se for muito curto,
+        //será necessário colocar altura no css
+        //Não preciso colocar o getElementById quando é body...
+        //Posso trabalhar com a função separadamente:
+        function eventoclick(){ //aqui é a declaração da função
+            console.log("Evento click com função separada.")
+        }
+        document.body.addEventListener("click",eventoclick); //aqui é o evento chamando a função
+        //vantagem de separar a função é que eu posso usar essa função várias vezes
+
+        window.addEventListener("load",function(e){
+            console.log("Evento chamado ao carregar a página");
+        })
+
+        window.addEventListener("load",function(e){
+            console.log("Scroll acionado!");
+            //para este evento funcionar é necessário ter barra de rolagem!!!
+        })
+        const nome = document.getElementById("nome");
+        nome.addEventListener("keydown",function(e){
+            console.log("Tecla acionada: "+e.key)
+            //o "e" é uma propriedade nativa do evento
+        })
+
+        const cidade = document.getElementById("cidade");
+        cidade.addEventListener("change",function(e){
+            console.log("Evento Change chamado.")
+        })
+
+        window.addEventListener('mousemove', function(e){
+            console.log("Evento MOUSEMOVE." + e.clientX + " " + e.clientY)
+        })
+        //click, dbclick, mousedown, mouseup, mousemove, mouseover, mouseou...
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem; /* rem é root + em */
+}
+header, footer{ /* a vírgula é para formatar ambos */
+    background-color: brown;
+    text-align: center;
+    padding: 2rem;
+    color: brown;
+}
+nav ol{ /* display flex é no OL porque é o "pai" dos elementos, isto é, o container. */
+    display: flex;
+    justify-content: center;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+nav a{
+    background-color: rgb(235, 134, 134);
+    padding: 1rem;
+    width: 20rem;
+    margin: 1rem;
+    display: inline-block; /* a marcação de âncora tem o comportamento "inile", isto é, o padding e width não funcionam corretamente. Então, é necessário colocar o 'display: inline-block', que permitirá um comportamento híbrido, isto é, inline(um lado do outro) e bloco (permite o width e padding corretamente). A estratégia de colocar essa formatação no âncora é para levar ao usuário USABILIDADE, toda a área do botão clicável */
+}
+nav li{
+    list-style-type: none; /* tira os marcadores dos itens da lista*/
+}
+nav li a:hover{ /* subclasse do css para efeito de passar o mouse */
+    background-color: black;
+}
+main{
+    max-width: 70rem; /* define uma largura máxima (mais responsivo) */
+    margin: 0 auto; /* coloca o bloco no centro, auto de automático */
+    /* para colocar um bloco no centro, pode usar width com margin ou display flex com justify-content. */
+    display: flex; /* flex no main porque as sections ficarão lado a lado... */
+    flex-wrap: wrap;
+}
+section{
+    width: 30rem; /* DICA: fechar o valor para encaixar 2 cards por linha usando o 'inspecionar' do nevegador */
+    border: 1px solid black; /* espessura estilo cor - separados por espaço */
+    padding: 1rem;
+    margin: 1rem;
+}

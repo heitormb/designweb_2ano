@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+
+    <h2>números de -10 A 10</h2>
+    <p id="numeros"></p>
+    <script>
+        const resultado = document.getElementById("numeros");
+        for(let i = -10; i <= 10; i++){
+            resultado.innerHTML += `<span> ${i} </span>`
+        }
+    </script>
+
+    <h2>cores</h2>
+    <p id="cor"></p>
+    <script>
+        const cores = ['blue', 'red', 'crimson', 'gray', 'green', 'purple', 'orange'];
+        const pCor = document.getElementById("cor");
+        pCor.innerHTML = "";
+        for(let i = 0; i < cores.length; i++){
+            pCor.innerHTML += `<span style="color: ${cores[i]}"> ${cores[i]} </span>`;
+        }
+    </script>
+
+    <h2>tamanhos de texto diferentes</h2>
+    <p id="tamanhos"></p>
+        <script>
+            for(let i=1 ; i<6 ; i++){
+                document.getElementById('tamanhos').innerHTML +=
+                `<span style="font-size: ${i + 1}rem;">${i} </span>`
+            }
+        </script>
+
+    <h2>formulário</h2>
+    <label>
+        Digite um nome: <input type="text" id="nome">
+    </label>
+    <button id="mostrar">mostrar</button>
+    <p id="resultado"></p>
+    <script>
+        const Mostrar = document.getElementById("mostrar");
+        const Resultado = document.getElementById("resultado");
+
+        Mostrar.addEventListener("click", function() {
+            let nome = document.getElementById("nome").value;
+            Resultado.innerHTML = "";
+            for(let i = 1; i <= 5; i++) {
+                Resultado.innerHTML += `<div style="font-size: ${i}rem;">${nome} (${i}rem)</div>`;
+            }
+        });
+    </script>
+
+    <h2>botão de mudar tamanho</h2>
+    <button id="aumentar">Aumentar</button>
+
+    <script>
+        let aumentar = document.getElementById("aumentar");
+        aumentar.addEventListener("click", function (e){
+            document.body.style.fontSize = "2rem";
+        })
+    </script>
+
+    <button id="diminuir">Diminuir</button>
+
+    <script>
+        let diminuir = document.getElementById("diminuir");
+        diminuir.addEventListener("click", function (e){
+            document.body.style.fontSize = "0.5rem";
+        })
+    </script>
+</body>
+</html>
